@@ -1,0 +1,44 @@
+/*
+Common
+*************/
+
+body {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+Home
+*************/
+
+.posts li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.posts li .profile_pic {
+    flex-basis: 15%;
+}
+
+.posts li .profile_pic img {
+    width: 50px;
+}
+
+.posts li .name_body {
+    flex-basis: 85%;
+} 
+
+.posts li .name_body .name_time .name {
+    font-weight: bold;
+}
+
+.posts li .name_body .name_time .username {
+    color: rgb(132, 131, 131);
+}
