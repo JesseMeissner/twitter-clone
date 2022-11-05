@@ -15,6 +15,28 @@ body {
 Home
 *************/
 
+.header {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+}
+
+.header .tweeter_logo img {
+    width: 45px;
+    position: relative;
+    left: 10px;
+    top: 7px;
+}
+
+.header .tweeter_text {
+    position: relative;
+    left: 35%;
+    background: -webkit-linear-gradient(#ff4400, #0046ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .posts li {
     display: flex;
     flex-direction: row;
@@ -49,5 +71,11 @@ Home
     width: 2px;
     position: relative;
     bottom: 3px;
+    color: #848383;
 }
 
+.posts li .name_body .likes .likes_icon {
+    width: 15px;
+    position: relative;
+    top: 2px;
+}

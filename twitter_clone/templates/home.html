@@ -5,30 +5,42 @@
 <section class="content">
 
     <section class="header_post_form">
-        <section class="header">Header</section>
-        <section class="post_form">Post Form</section>
-    </section>
-        
-        <section class="posts">
-            <ul>
-                {% for post in posts %}
-                <li>
-                    <div class="profile_pic">
-                        <img src="{% static 'img/user.png' %}">
-                    </div>
-                    <div class="name_body">
-                        <div class="name_time">
-                            <span class="name"> {{ post.name }} </span>
-                            <span class="username"> <span>@</span>{{ post.username }} </span>
-                            <span class="dot"> <img src="{% static 'img/new-moon.png' %}"> </span>
-                            <span class="datetime"> {{ post.created_at }} <br> </span>
-                        </div>
-                        <div class="body"> {{ post.body }} <br> </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+        <section class="header">
+            <div class="tweeter_logo">
+                <img src="{% static 'img/bird.png' %}" >
+            </div>
+            <div class="tweeter_text">
+                <h1>Tweeter</h1>
+            </div>
         </section>
+        <section class="post_form"></section>
+    </section>
+  
+    <section class="posts">
+        <ul>
+            {% for post in posts %}
+            <li>
+                <div class="profile_pic">
+                    <img src="{% static 'img/user.png' %}">
+                </div>
+                <div class="name_body">
+                    <div class="name_time">
+                        <span class="name"> {{ post.name }} </span>
+                        <span class="username"> <span>@</span>{{ post.username }} </span>
+                        <span class="dot"> <img src="{% static 'img/new-moon.png' %}"> </span>
+                        <span class="datetime"> {{ post.created_at }} <br> </span>
+                    </div>
+                    <div class="body"> {{ post.body }} <br> </div>
+                    <div class="likes">
+                        <img class="likes_icon" src="{% static 'img/heart.png' %}">
+                        <span class="likes_number"> {{post.likes}} </span>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>   
+
 </section>
 
 {% endblock %}
