@@ -18,7 +18,7 @@ Home
 .posts li {
     display: flex;
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 12px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ccc;
 }
@@ -33,12 +33,21 @@ Home
 
 .posts li .name_body {
     flex-basis: 85%;
+    font-size: 14px;
 } 
+
+.posts li .name_body .name_time {
+    color: #848383;
+}
 
 .posts li .name_body .name_time .name {
     font-weight: bold;
+    color: black;
 }
 
-.posts li .name_body .name_time .username {
-    color: rgb(132, 131, 131);
+.posts li .name_body .name_time .dot img {
+    width: 2px;
+    position: relative;
+    bottom: 3px;
 }
+

@@ -20,6 +20,7 @@
                         <div class="name_time">
                             <span class="name"> {{ post.name }} </span>
                             <span class="username"> <span>@</span>{{ post.username }} </span>
+                            <span class="dot"> <img src="{% static 'img/new-moon.png' %}"> </span>
                             <span class="datetime"> {{ post.created_at }} <br> </span>
                         </div>
                         <div class="body"> {{ post.body }} <br> </div>
