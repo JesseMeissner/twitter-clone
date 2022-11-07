@@ -15,6 +15,13 @@ Common
 Home
 *************/
 
+.header_post_form {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: white;
+}
+
 .header {
     height: 50px;
     border-bottom: 1px solid #ccc;
@@ -39,6 +46,17 @@ Home
 
 .post_form {
     border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.profile_pic_tweet {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.profile_pic_tweet textarea {
+    flex-basis: 85%;
 }
 
 .post_form textarea {
@@ -48,15 +66,25 @@ Home
     border: none;
     resize: none;
     outline: none;
-    position: relative;
+}
+
+.upload_submit {
+    display: flex;
+    flex-direction: row;
 }
 
 .post_form input {
-    background-color: #0084ff;
+    background-color: #006aff;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 3px;
+    position: relative;
+    flex-basis: 15%;
+
 }
+
+
+
 
 .posts li {
     display: flex;
@@ -66,11 +94,11 @@ Home
     border-bottom: 1px solid #ccc;
 }
 
-.posts li .profile_pic {
+.profile_pic {
     flex-basis: 15%;
 }
 
-.posts li .profile_pic img {
+.profile_pic img {
     width: 50px;
 }
 
@@ -93,10 +121,13 @@ Home
     position: relative;
     bottom: 3px;
     color: #848383;
+    z-index: -5;
 }
 
 .posts li .name_body .likes .likes_icon {
     width: 15px;
     position: relative;
     top: 2px;
+    z-index: -5;
 }
+
