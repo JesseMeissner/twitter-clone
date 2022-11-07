@@ -73,12 +73,27 @@ Home
     flex-direction: row;
 }
 
-.post_form input {
+.blank {
+    flex-basis: 18%;
+}
+
+.custom_button {
+    background-color: white;
+    color: #006aff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    flex-basis: 67%;
+    margin: 5px;
+    padding: 3px;
+}
+
+.tweet {
     background-color: #006aff;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     position: relative;
+    margin: 5px;
     flex-basis: 15%;
 
 }
