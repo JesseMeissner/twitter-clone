@@ -19,3 +19,10 @@ def index(request):
 
     #Display
     return render(request, 'home.html', {'posts': posts})
+
+
+def likePost(request, post_id):
+    new_value = Post.objects.get(id=post_id)
+    new_value.likes += 1
+    new_value.save()
+    return HttpResponseRedirect('/')

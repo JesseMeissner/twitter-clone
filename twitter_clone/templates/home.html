@@ -50,14 +50,14 @@
                     </div>
                     <div class="body"> {{ post.body }} <br> </div>
                     <div class="likes">
-                        <img class="likes_icon" src="{% static 'img/heart.png' %}">
-                        <span class="likes_number"> {{post.likes}} </span>
+                      <a class="likes_link" href="like/{{ post.id }}"> <img class="likes_icon" src="{% static 'img/heart.png' %}"> </a>
+                        <span class="likes_number"> {{ post.likes }} </span>
                     </div>
                 </div>
             </li>
             {% endfor %}
         </ol>
-    </section>   
+    </section> 
 
     <script src="{% static 'js/script.js' %}"></script>
 

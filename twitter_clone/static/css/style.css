@@ -100,6 +100,7 @@ Home
 
 
 
+
 .ordered_list {
     display: flex;
     flex-direction: column-reverse;
@@ -141,6 +142,10 @@ Home
     bottom: 3px;
     color: #848383;
     z-index: -5;
+}
+
+.likes_link {
+    text-decoration: none;
 }
 
 .posts li .name_body .likes .likes_icon {
