@@ -65,20 +65,20 @@ Home
 .name_entry {
     margin-left: 5px;
     margin-right: 5px;
-    height: 20px;
+    height: 30px;
     border: none;
 }
 
 .username_entry {
     margin-left: 5px;
     margin-right: 5px;
-    height: 20px;
+    height: 30px;
     border: none;
 }
 
 .post_form textarea {
     width: 80%;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 16%;
     margin-right: 5px;
     border: none;
