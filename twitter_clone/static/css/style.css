@@ -49,23 +49,42 @@ Home
     position: relative;
 }
 
-.profile_pic_tweet {
+.profile_pic_name {
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    margin-top: 10px;
+    margin-left: 4.5%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
 }
 
-.profile_pic_tweet textarea {
-    flex-basis: 85%;
+#profile_pic_entry {
+    flex-basis: 11%;
+}
+
+.name_entry {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 20px;
+    border: none;
+}
+
+.username_entry {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 20px;
+    border: none;
 }
 
 .post_form textarea {
-    width: 90%;
-    margin-left: 5px;
+    width: 80%;
+    margin-top: 5px;
+    margin-left: 16%;
     margin-right: 5px;
     border: none;
     resize: none;
     outline: none;
+    height: 60px;
 }
 
 .upload_submit {
@@ -74,7 +93,7 @@ Home
 }
 
 .blank {
-    flex-basis: 18%;
+    flex-basis: 16%;
 }
 
 .custom_button {
@@ -106,6 +125,10 @@ Home
     flex-direction: column-reverse;
 }
 
+ol {
+    padding-left: 4.5%;
+}
+
 .posts li {
     display: flex;
     flex-direction: row;
@@ -114,8 +137,8 @@ Home
     border-bottom: 1px solid #ccc;
 }
 
-.profile_pic {
-    flex-basis: 15%;
+#profile_pic_posts {
+    flex-basis: 13%;
 }
 
 .profile_pic img {
@@ -148,7 +171,7 @@ Home
     text-decoration: none;
 }
 
-.posts li .name_body .likes .likes_icon {
+.likes_icon {
     width: 15px;
     position: relative;
     top: 2px;

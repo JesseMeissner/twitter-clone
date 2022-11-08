@@ -9,7 +9,7 @@
             <div class="tweeter_logo">
                 <img src="{% static 'img/bird.png' %}" >
             </div>
-            <div class="tweeter_text">
+            <div class="tweeter_text" id="tweeter_text">
                 <h1>Tweeter</h1>
             </div>
         </section>
@@ -17,12 +17,14 @@
         <section class="post_form">
             <form action="/" method="POST">
             {% csrf_token %}
-                <div class="profile_pic_tweet">
-                    <div class="profile_pic">
+                <div class="profile_pic_name">
+                    <div class="profile_pic" id="profile_pic_entry">
                         <img src="{% static 'img/user.png' %}">
                     </div>
-                    <textarea name="body" placeholder="Tweet what's on your mind..." maxlength="140" required></textarea>
+                    <input class="name_entry" type="text" name="name" placeholder="Name">
+                    <input class="username_entry" type="text" name="username" placeholder="Username">
                 </div>
+                <textarea name="body" placeholder="Tweet what's on your mind..." maxlength="140" required></textarea>
                 <div class="upload_submit">
                     <div class="blank"></div>
                     <input class="files" name="files" type="file" id="files" accept="image/*" hidden="hidden">
@@ -38,7 +40,7 @@
         <ol class="ordered_list">
             {% for post in posts %}
             <li>
-                <div class="profile_pic">
+                <div class="profile_pic" id="profile_pic_posts">
                     <img src="{% static 'img/user.png' %}">
                 </div>
                 <div class="name_body">
@@ -50,7 +52,9 @@
                     </div>
                     <div class="body"> {{ post.body }} <br> </div>
                     <div class="likes">
-                      <a class="likes_link" href="like/{{ post.id }}"> <img class="likes_icon" src="{% static 'img/heart.png' %}"> </a>
+                        <a class="likes_link" href="like/{{ post.id }}"> 
+                            <img class="likes_icon" id="likes_icon" src="{% static 'img/heart.png' %}" onclick="return open()"> 
+                        </a>
                         <span class="likes_number"> {{ post.likes }} </span>
                     </div>
                 </div>
