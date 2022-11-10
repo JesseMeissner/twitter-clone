@@ -16,8 +16,7 @@ Home
 *************/
 
 .header_post_form {
-    position: sticky;
-    position: -webkit-sticky;
+    /* position: sticky; */
     top: 0;
     background-color: white;
 }
@@ -41,6 +40,7 @@ Home
     left: 35%;
     background: -webkit-linear-gradient(#ff4400, #0046ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -129,12 +129,37 @@ ol {
     padding-left: 4.5%;
 }
 
+
 .posts li {
     display: flex;
     flex-direction: row;
     margin-bottom: 12px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ccc;
+    position: relative;
+ 
+}
+
+.posts li .menu_icon {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+}
+
+.posts li .menu {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    padding: 5px;
+    display: none;
+}
+
+.posts li .menu a {
+    text-decoration: none;
 }
 
 #profile_pic_posts {
@@ -150,13 +175,17 @@ ol {
     font-size: 14px;
 } 
 
-.posts li .name_body .name_time {
+.name_time {
     color: #848383;
 }
 
 .posts li .name_body .name_time .name {
     font-weight: bold;
     color: black;
+}
+
+.username {
+    text-transform: lowercase;
 }
 
 .posts li .name_body .name_time .dot img {
