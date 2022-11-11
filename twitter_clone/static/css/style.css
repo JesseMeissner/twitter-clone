@@ -111,8 +111,8 @@ Home
 }
 
 .cancel {
-    background-color: #006aff;
-    color: white;
+    background-color: white;
+    color: #006aff;
     border: none;
     border-radius: 8px;
     flex-basis: 7.5%;
@@ -130,7 +130,7 @@ Home
     border-radius: 8px;
     position: relative;
     margin: 5px;
-    flex-basis: 7.5%;
+    flex-basis: 15%;
 
 }
 
