@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Post, Photo
 from .forms import PostForm, PhotoForm
 from cloudinary.forms import cl_init_js_callbacks
+from django.views.generic.edit import UpdateView
  
 # Create your views here.
 def index(request):
@@ -12,8 +13,6 @@ def index(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
-        else:
-            return HttpResponseRedirect(form.erros.as_json())
 
     #Get all posts, limit 30
     posts = Post.objects.all()[:30]
@@ -39,3 +38,18 @@ def delete(request, post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return HttpResponseRedirect('/')
+
+def edit(request, post_id):
+    instance = Post.objects.get(id=post_id)
+    form = PostForm(request.POST, request.FILES, instance=instance)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    return render(request, 'post_update_form.html', {'form': form, 'post': instance})
+
+class PostUpdateView(UpdateView):
+    model = Post
+    fields = ['name']
+    template_name_suffix: str = '_update_form'

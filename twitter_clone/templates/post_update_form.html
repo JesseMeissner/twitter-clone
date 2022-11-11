@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="content">
+
+    <section class="post_form">
+        <form action="/" method="POST">
+        {% csrf_token %}
+            <div class="profile_pic_name">
+                <div class="profile_pic" id="profile_pic_entry">
+                    <img src="{% static 'img/user.png' %}">
+                </div>
+                <input class="name_entry" type="text" name="name" placeholder="Name" value="{{ post.name }}">
+                <input class="username_entry" type="text" name="username" placeholder="Username" value="{{ post.username }}">
+            </div>
+            <textarea name="body" placeholder="Tweet what's on your mind..." maxlength="140" required>{{ post.body }}</textarea>
+            <div class="upload_submit">
+                <div class="blank"></div>
+                <input class="files" name="image" type="file" id="files" accept="image/*" hidden="hidden">
+                <button class="custom_button" id="custom_button" type="button">Upload</button>
+                <input class="tweet" name="submit" type="submit" value="Tweet">
+            </div>
+        </form>
+    </section>
+
+</section>
+
+{% endblock %}

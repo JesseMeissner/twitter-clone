@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 
 <section class="content">
@@ -42,6 +43,7 @@
                 <img class="menu_icon js-menu-icon" src="{% static 'img/option.png' %}">
                 <div class="menu">
                 <a href="/delete/{{ post.id }}">Delete</a>
+                <a href="edit/{{ post.id }}">Edit</a>
                 </div>
                 <div class="profile_pic" id="profile_pic_posts">
                     <img src="{% static 'img/user.png' %}">
