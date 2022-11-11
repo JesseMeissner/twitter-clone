@@ -5,7 +5,7 @@
 <section class="content">
 
     <section class="post_form">
-        <form action="/" method="POST">
+        <form method="POST">
         {% csrf_token %}
             <div class="profile_pic_name">
                 <div class="profile_pic" id="profile_pic_entry">
@@ -25,6 +25,7 @@
         </form>
     </section>
 
-</section>
+    <script src="{% static 'js/script.js' %}"></script>
 
+</section>
 {% endblock %}

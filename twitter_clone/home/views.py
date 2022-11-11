@@ -49,7 +49,3 @@ def edit(request, post_id):
             return HttpResponseRedirect('/')
     return render(request, 'post_update_form.html', {'form': form, 'post': instance})
 
-class PostUpdateView(UpdateView):
-    model = Post
-    fields = ['name']
-    template_name_suffix: str = '_update_form'
