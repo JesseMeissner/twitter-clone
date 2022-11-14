@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cloudinary %}
 
 {% block content %}
 
@@ -15,7 +16,7 @@
         </section>
         
         <section class="post_form">
-            <form action="/" method="POST">
+            <form action="/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
                 <div class="profile_pic_name">
                     <div class="profile_pic" id="profile_pic_entry">
@@ -27,7 +28,8 @@
                 <textarea name="body" placeholder="Tweet what's on your mind..." maxlength="140" required></textarea>
                 <div class="upload_submit">
                     <div class="blank"></div>
-                    <input class="files" name="image" type="file" id="files" accept="image/*" hidden="hidden">
+                   <!-- <input class="files" name="image" type="file" id="files" accept="image/*" hidden="hidden"> -->
+                    {{ img_form.image }}
                     <button class="custom_button" id="custom_button" type="button">Upload</button>
                     <input class="tweet" name="submit" type="submit" value="Tweet">
                 </div>
@@ -56,7 +58,7 @@
                         <span class="datetime"> {{ post.created_at }} <br> </span>
                     </div>
                     <div class="body"> {{ post.body }} <br> </div>
-                    <!-- <img src="{{ photo.image.url }}"> -->
+                    <img src="{{ photo.image.url }}">
                     <div class="likes">
                         <a class="likes_link" href="like/{{ post.id }}"> 
                             <img class="likes_icon" id="likes_icon" src="{% static 'img/heart.png' %}" > 
