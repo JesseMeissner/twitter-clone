@@ -16,10 +16,27 @@ def index(request):
 
     #Get all posts, limit 30
     posts = Post.objects.all()[:30]
-    photos = Photo.objects.all()[:30]
+
+    img_form = PhotoForm()
 
     #Display
-    return render(request, 'home.html', {'posts': posts, 'photos': photos})
+    return render(request, 'home.html', {'posts': posts, 'img_form': img_form})
+
+
+def img(request, img_id):
+    img_post = Photo.objects.get(id=img_id)
+    return render(request, 'home.html', {'img_post': img_post})
+
+
+def imgUpload(request):
+    if request.method == 'POST':
+        form = PhotoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+
+    img_form = PhotoForm()
+    return render(request, 'home.html', {'img_form': img_form})
 
 
 def likePost(request, post_id):
@@ -29,15 +46,12 @@ def likePost(request, post_id):
     return HttpResponseRedirect('/')
 
 
-def loadPhoto(request):
-    form = PhotoForm()
-    return render(request, 'home.html', {'form': form})
-
 
 def delete(request, post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return HttpResponseRedirect('/')
+
 
 def edit(request, post_id):
     instance = Post.objects.get(id=post_id)
