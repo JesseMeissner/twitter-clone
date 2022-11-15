@@ -5,7 +5,7 @@
 <section class="content">
 
     <section class="post_form">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
             <div class="profile_pic_name">
                 <div class="profile_pic" id="profile_pic_entry">
@@ -17,7 +17,7 @@
             <textarea name="body" placeholder="Tweet what's on your mind..." maxlength="140" required>{{ post.body }}</textarea>
             {% if post.image %}
             <img class="image" src="{{ post.image.url }}" style="width: 200px; position: relative; left: 85px; margin-bottom: 10px;">
-        {% endif %}
+            {% endif %}
             <div class="upload_submit">
                 <div class="blank"></div>
                 <input class="files" name="image" type="file" id="files" accept="image/*" hidden="hidden">
