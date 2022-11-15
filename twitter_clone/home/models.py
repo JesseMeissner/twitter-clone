@@ -26,7 +26,9 @@ class Post(models.Model):
     likes = models.IntegerField(
         'Likes', blank=True, null=True, db_index=True, default=0
     )
+
+    image = CloudinaryField(
+        'image', blank=True, db_index=True
+    )
     
 
-class Photo(models.Model):
-  image = CloudinaryField('image')

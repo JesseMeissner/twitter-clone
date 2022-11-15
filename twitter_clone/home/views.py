@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Post, Photo
-from .forms import PostForm, PhotoForm
+from .models import Post
+from .forms import PostForm
 from cloudinary.forms import cl_init_js_callbacks
 from django.views.generic.edit import UpdateView
  
@@ -14,29 +14,12 @@ def index(request):
             form.save()
             return HttpResponseRedirect('/')
 
+
     #Get all posts, limit 30
     posts = Post.objects.all()[:30]
 
-    img_form = PhotoForm()
-
     #Display
-    return render(request, 'home.html', {'posts': posts, 'img_form': img_form})
-
-
-def img(request, img_id):
-    img_post = Photo.objects.get(id=img_id)
-    return render(request, 'home.html', {'img_post': img_post})
-
-
-def imgUpload(request):
-    if request.method == 'POST':
-        form = PhotoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/')
-
-    img_form = PhotoForm()
-    return render(request, 'home.html', {'img_form': img_form})
+    return render(request, 'home.html', {'posts': posts})
 
 
 def likePost(request, post_id):

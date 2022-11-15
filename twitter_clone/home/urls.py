@@ -3,8 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('', views.img, name='img'),
-    path('', views.imgUpload, name='imgUpload'),
     path('like/<int:post_id>/', views.likePost, name='like'),
     path('delete/<int:post_id>/', views.delete, name='delete'),
     path('edit/<int:post_id>/', views.edit, name='edit')
