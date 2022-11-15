@@ -187,6 +187,12 @@ ol {
     width: 50px;
 }
 
+@media screen and (max-width: 400px) {
+    .profile_pic img {
+        width: 40px;
+    }
+}
+
 .posts li .name_body {
     flex-basis: 85%;
     font-size: 14px;
